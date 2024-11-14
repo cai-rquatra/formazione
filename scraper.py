@@ -8,7 +8,7 @@ import time
 #https://googlechromelabs.github.io/chrome-for-testing/#stable
 
 # Specify path to ChromeDriver
-service = Service('/usr/bin/chromedriver')  # Update with your ChromeDriver path
+service = Service('/opt/homebrew/bin/chromedriver')  # Update with your ChromeDriver path Linux: /usr/bin/chromedriver
 
 # Initialize ChromeDriver with Service
 driver = webdriver.Chrome(service=service)
@@ -50,7 +50,7 @@ for row in rows:
     data.append(row_data)
 
 # Step 4: Save to CSV
-csv_filename = "table_data.csv"
+csv_filename = "data/table_data.csv"
 with open(csv_filename, mode="w", newline="", encoding="utf-8") as file:
     writer = csv.writer(file)
     writer.writerows(data)
