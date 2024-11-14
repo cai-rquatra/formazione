@@ -3,15 +3,27 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 import logging
+from logging.handlers import TimedRotatingFileHandler
 import csv
 import time
 
-# Set up logging
-logging.basicConfig(
-    filename="log/main.log",
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s"
+# Set up daily log rotation
+log_handler = TimedRotatingFileHandler(
+    "log/main.log",         # Base log file name
+    when="midnight",      # Rotate at midnight
+    interval=1,           # Rotate every 1 day
+    backupCount=7         # Keep logs for the last 7 days
 )
+log_handler.suffix = "%Y-%m-%d"  # Log file names will include the date
+
+# Set up logging format
+formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+log_handler.setFormatter(formatter)
+
+# Configure the root logger to use the rotating handler
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+logger.addHandler(log_handler)
 
 try:
     logging.info("Starting the Selenium script")
