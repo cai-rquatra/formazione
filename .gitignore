@@ -1,0 +1,67 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+.env/
+.venv/
+env/
+
+# Cache and logs
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# macOS
+.DS_Store
+
+# IDE files
+.idea/
+.vscode/
+
+# Test outputs
+coverage/
+*.cover
+*.coverage
+*.coveragerc
+.coverage.*
+
+# Environment variables
+.env
+
+# Distribution/build files
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# pipenv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Pyre type checker
+.pyre/
+
+# mypy type checker
+.mypy_cac
